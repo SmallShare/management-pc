@@ -1,13 +1,23 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
-  </div>
+    <div id="app"  v-cloak>
+        <keep-alive>
+            <router-view v-if="$route.meta.keepAlive"/>
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive"/>
+    </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+    name: 'App',
+    data() {
+        return {
+
+        };
+    },
+    methods:{
+
+    }
 }
 </script>
 
