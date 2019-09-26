@@ -1,5 +1,6 @@
 <template>
-    <div> 我是首页</div>
+    <div class="pc-content">
+    </div>
 </template>
 <script type="text/ecmascript-6">
     export default {
@@ -34,4 +35,5 @@
     };
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
+
 </style>
