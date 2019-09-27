@@ -1,15 +1,26 @@
 <template>
     <div id="app"  v-cloak>
-        <header-bar v-if="headerShow"></header-bar>
-        <keep-alive>
-            <router-view v-if="$route.meta.keepAlive"/>
-        </keep-alive>
-        <router-view v-if="!$route.meta.keepAlive"/>
+            <header-bar v-if="headerShow"></header-bar>
+
+        <el-container>
+            <el-aside width="290px">
+                <sub-menu></sub-menu>
+            </el-aside>
+            <el-main>
+                <keep-alive>
+                    <router-view v-if="$route.meta.keepAlive"/>
+                </keep-alive>
+                <router-view v-if="!$route.meta.keepAlive"/>
+            </el-main>
+        </el-container>
+
+
     </div>
 </template>
 
 <script>
-import headerBar from '@/components/header'
+import headerBar from '@/components/header';
+import subMenu from '@/components/submenu';
 export default {
     name: 'App',
     data() {
@@ -18,7 +29,8 @@ export default {
         };
     },
     components: {
-        headerBar
+        headerBar,
+        subMenu
     },
     mounted(){
         this.headerShow = this.$route.path !== '/login';

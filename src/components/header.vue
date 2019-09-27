@@ -9,6 +9,7 @@
             <p class="workNo">
                 工号：{{workNo}}
             </p>
+            <img class="out" src="@/assets/images/out.png" alt="">
         </div>
     </div>
 </template>
@@ -41,6 +42,7 @@
         box-shadow:0 4px 12px 0 rgba(0,0,0,0.4);
         position: relative;
         display: flex;
+        justify-content: space-between;
         .left-logo{
             display: flex;
             .logo{
@@ -67,7 +69,16 @@
         }
         .header-left{
             display: flex;
-            justify-content: flex-end;
+            .workNo{
+                color: #333333;
+                font-size: 18px;
+                padding: 32px 30px 0 0;
+            }
+            .out{
+                width: 23px;
+                height: 25px;
+                margin: 26px 40px 0 0;
+            }
         }
     }
 </style>
