@@ -1,5 +1,6 @@
 <template>
     <div class="pc-content">
+        首页
     </div>
 </template>
 <script type="text/ecmascript-6">

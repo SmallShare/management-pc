@@ -3,7 +3,7 @@
             <header-bar v-if="headerShow"></header-bar>
 
         <el-container>
-            <el-aside width="290px">
+            <el-aside width="290px" class="aside">
                 <sub-menu></sub-menu>
             </el-aside>
             <el-main>
@@ -42,11 +42,18 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
+    #app {
+      font-family: 'Avenir', Helvetica, Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-align: center;
+      color: #2c3e50;
+    }
+    #app .el-container{
+        min-height: 741px !important;
+    }
+    .aside{
+        background: #000;
+        opacity: 0.8;
+    }
 </style>
