@@ -1,0 +1,149 @@
+teams = [
+{
+title: "变更类",
+groups: [
+{
+src: require("../assets/img/h/icons1.png"),
+info: "客户信息维护",
+path:"/bd_query",
+urlLink: "/cust",
+bqTypeCode: '0'
+},
+{
+src: require("../assets/img/h/icons2.png"),
+info: "续期交费信息变更",
+path:"/renewalQuery",
+urlLink: "",
+bqTypeCode: '4'
+},
+// {
+//   src: require("../assets/img/h/icons3.png"),
+//   info: "受益人变更",
+//   path:"/benefitQuery",
+//   urlLink: ""
+// },
+{
+src: require("../assets/img/h/icons4.png"),
+info: "收付费方式变更变更",
+path:"/chargeQuery",
+urlLink: "/chargepaychange",
+bqTypeCode: ''
+},
+// {
+//   src: require("../assets/img/h/icons5.png"),
+//   info: "领取形式/方式/日期/年龄变更",
+//   urlLink: ""
+// }
+]
+}
+,{
+title: "保障调整类",
+groups: [
+{
+src: require("../assets/img/h/icons6.png"),
+info: "新增附加险",
+path:"/newQuery",
+urlLink: "/product",
+id:'0',
+bqTypeCode: '1'
+},
+{
+src: require("../assets/img/h/icons7.png"),
+info: "保单复效",
+path:"/actualQuery",
+urlLink: "/product",
+id:'1',
+bqTypeCode: '3'
+},
+//     {
+//       src: require("../assets/img/h/icons8.png"),
+//       info: "解除合同",
+//       urlLink: ""
+//     },
+//     {
+//       src: require("../assets/img/h/icons9.png"),
+//       info: "减保",
+//       urlLink: ""
+//     },
+//     {
+//       src: require("../assets/img/h/icons10.png"),
+//       info: "续保险种转换",
+//       path: "/transformQuery",
+//       urlLink: "/image"
+//     }
+//     {
+//       src: require("../assets/img/h/icons11.png"),
+//       info: "增补告知",
+//       urlLink: ""
+//     }
+]
+}
+// ,{
+//   title: "贷款类",
+//   groups: [
+//     {
+//       src: require("../assets/img/h/icons12.png"),
+//       info: "保单贷款续贷",
+//       urlLink: ""
+//     },
+//     {
+//       src: require("../assets/img/h/icons13.png"),
+//       info: "保单质押贷款",
+//       urlLink: ""
+//     },
+//     {
+//       src: require("../assets/img/h/icons14.png"),
+//       info: "贷款清偿",
+//       urlLink: ""
+//     }
+//   ]
+// }
+,{
+title: "领取类",
+groups: [
+// {
+//   src: require("../assets/img/h/icons15.png"),
+//   info: "账户部分领取",
+//   urlLink: ""
+// },
+{
+src: require("../assets/img/h/icons16.png"),
+info: "年金、满期金领取",
+path: "/annuityQuery",
+urlLink: "",
+bqTypeCode: '7'
+}
+// {
+//   src: require("../assets/img/h/icons17.png"),
+//   info: "客户账户领取、注销",
+//   urlLink: ""
+// }
+]
+}
+// ,{
+//   title: "补发挂失类",
+//   groups: [
+//     {
+//       src: require("../assets/img/h/icons18.png"),
+//       info: "保单补发",
+//       urlLink: ""
+//     },
+//     {
+//       src: require("../assets/img/h/icons19.png"),
+//       info: "保单挂失/解挂",
+//       urlLink: ""
+//     }
+//   ]
+// }
+,{
+title: "更多服务",
+groups: [
+{
+src: require("../assets/img/h/icons20.png"),
+info: "保全记录查询",
+path:"/query",
+urlLink: "/image"
+}
+]
+}
+]
