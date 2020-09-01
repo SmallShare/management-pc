@@ -1,20 +1,21 @@
 <template>
     <div id="app"  v-cloak>
-            <header-bar v-if="headerShow"></header-bar>
-
-        <el-container>
-            <el-aside width="290px" class="aside">
-                <sub-menu></sub-menu>
-            </el-aside>
-            <el-main>
-                <keep-alive>
-                    <router-view v-if="$route.meta.keepAlive"/>
-                </keep-alive>
-                <router-view v-if="!$route.meta.keepAlive"/>
-            </el-main>
-        </el-container>
-
-
+       <!--<header-bar v-if="headerShow"></header-bar>-->
+        <!--<el-container>-->
+            <!--<el-aside width="290px" class="aside">-->
+                <!--<sub-menu></sub-menu>-->
+            <!--</el-aside>-->
+            <!--<el-main>-->
+                <!--<keep-alive>-->
+                    <!--<router-view v-if="$route.meta.keepAlive"/>-->
+                <!--</keep-alive>-->
+                <!--<router-view v-if="!$route.meta.keepAlive"/>-->
+            <!--</el-main>-->
+        <!--</el-container>-->
+        <keep-alive>
+            <router-view v-if="$route.meta.keepAlive"/>
+        </keep-alive>
+        <router-view v-if="!$route.meta.keepAlive"/>
     </div>
 </template>
 

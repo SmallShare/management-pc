@@ -9,4 +9,113 @@
     <div id="app"></div>
     <!-- built files will be auto injected -->
   </body>
+  <script>
+      // console.log(11);
+      // let arr = [1,2,[3,[4,[5,[6,[7,[8,[9]]]]]]]];
+      // var flatten1 = arr => {
+      //     return arr.reduce((res, cur) => {
+      //         debugger
+      //         console.log('res=',res,'cur=',cur);
+      //         // 如果当前项cur为数组，就继续递归展平
+      //         if (Array.isArray(cur)) {
+      //             // 返回新数组包括展开的原数组元素和新展平的数组元素
+      //             return [...res, ...flatten1(cur)];
+      //         } else {
+      //             // 返回新数组包括展开的原数组元素和当前项
+      //             return [...res, cur];
+      //         }
+      //     }, arr);
+      // };
+      // // flatten1(arr);
+      // function sum(a, b, c, d) {
+      //     return a + b + c + d;
+      // }
+      // // 柯里化函数
+      // function curry(fn, ...args) {
+      //     // 如果传递的参数还没有达到要执行的函数fn的个数
+      //     // 就继续返回新的函数(高阶函数)
+      //     // 并且返回curry函数传递剩下的参数
+      //     if (args.length < fn.length) {
+      //         return (...newArgs) => curry(fn, ...args, ...newArgs);
+      //     } else {
+      //         return fn(...args);
+      //     }
+      // }
+      //
+      // // 测试用例
+      // let add = curry(sum);
+      // // console.log(add(1)(2)(3)(4));
+      // // console.log(add(1, 2, 3)(4));
+      // // console.log(add(1, 2)(3, 4));
+      // // console.log(add(1)(2, 3)(4));
+      //
+      // Function.prototype.call = function(context, ...args) {
+      //     // 执行上下文都保证是对象类型，如果不是就是window
+      //     debugger
+      //     context = Object(context) || window;
+      //     // 创建一个额外的变量当做context的属性
+      //     const fn = Symbol();
+      //     // 给这个fn属性赋值为当前的函数
+      //     context[fn] = this;
+      //     // 执行函数把...args传入
+      //     const result = context[fn](...args);
+      //     console.log('11',result);
+      //     // 删除使用过的fn属性
+      //     delete context[fn];
+      //     // 返回函数执行结果
+      //     return result;
+      // };
+      //
+      // // 测试用例 - call
+      // let o = { a: 1 };
+      // function fn(b) {
+      //     console.log(this.a, b);
+      // }
+      // fn.call(o, '你好');
+      // Function.prototype.bind = function(context, ...args) {
+      //     // context为要改变的执行上下文
+      //     // ...args为传入bind函数的其余参数
+      //     return (...newArgs) => {
+      //         // 这里返回一个新的函数
+      //         // 通过调用call方法改变this指向并且把老参和新参一并传入
+      //         return this.call(context, ...args, ...newArgs);
+      //     }
+      // };
+      // // 测试用例
+      // let b = {name: 'chd'};
+      // function f(...args) {
+      //     console.log(this.name, ...args);
+      // }
+      // let o2 = f.bind(b, 1, '222', null, [1,2,3], {age: 5});
+      // o2();
+      // // console.log();
+      // function shortHandle(fn,time){
+      //     let pre = 0;
+      //     return () => {
+      //         let nowTime = Date.now();
+      //         if(nowTime - pre > time){
+      //             fn.apply(this,arguments);
+      //             pre = nowTime;
+      //         }
+      //     }
+      // }
+      // function f1(fn,time,isShow) {
+      //     let timer;
+      //     if(isShow){
+      //         fn.apply(this,arguments);
+      //         isShow = false;
+      //         return;
+      //     }
+      //     if(timer){
+      //         return;
+      //     }else{
+      //         timer = setTimeout(() =>{
+      //             fn.apply(this,arguments);
+      //         },time)
+      //         clearInterval(timer);
+      //         timer = null;
+      //     }
+      // }
+
+  </script>
 </html>

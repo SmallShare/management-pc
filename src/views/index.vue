@@ -1,39 +1,39 @@
 <template>
     <div class="pc-content">
-        首页
+        <header-bar v-if="headerShow"></header-bar>
+        <!--<el-container>-->
+            <!--<el-aside width="290px" class="aside">-->
+                <!--<sub-menu></sub-menu>-->
+            <!--</el-aside>-->
+            <!--<el-main>-->
+                <!--<keep-alive>-->
+                    <!--<router-view v-if="$route.meta.keepAlive"/>-->
+                <!--</keep-alive>-->
+                <!--<router-view v-if="!$route.meta.keepAlive"/>-->
+            <!--</el-main>-->
+        <!--</el-container>-->
     </div>
 </template>
 <script type="text/ecmascript-6">
+    import headerBar from '@/components/header';
+    import subMenu from '@/components/submenu';
     export default {
         data() {
-            return {};
+            return {
+                headerShow: false
+            };
         },
-        components: {},
-        watch: {},
-        created() {
+        components: {
+            headerBar,
+            subMenu
         },
-        beforeRouteLeave(to, from, next) {
-            next();
+        mounted(){
+            this.headerShow = this.$route.path !== '/login';
         },
-        activated() {
-            if (!this.$route.meta.isUseCache) {
-                console.log("第一次1");
-            } else {
-                console.log("第二次2");
-                this.$route.meta.isUseCache = false;
-            }
-        },
-        deactivated() {
+        methods:{
 
-        },
-        mounted() {
-
-        },
-        filters: {},
-        methods: {},
-        destroyed() {
         }
-    };
+    }
 </script>
 <style rel="stylesheet/scss" lang="scss" scoped>
 
