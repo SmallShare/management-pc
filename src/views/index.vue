@@ -12,6 +12,7 @@
                 <!--<router-view v-if="!$route.meta.keepAlive"/>-->
             <!--</el-main>-->
         <!--</el-container>-->
+        <button @click="goBenefit()">跳转到受益人</button>
     </div>
 </template>
 <script type="text/ecmascript-6">
@@ -31,7 +32,9 @@
             this.headerShow = this.$route.path !== '/login';
         },
         methods:{
-
+            goBenefit: function () {
+                this.$router.push('/benefitQuery');
+            }
         }
     }
 </script>

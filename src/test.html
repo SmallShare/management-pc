@@ -86,21 +86,42 @@
     </style>
 </head>
 <body>
-    <div class="wrapper">
-        <div class="item one">1</div>
-        <div class="item two">2</div>
-        <div class="item three">3</div>
-        <div class="item four">4</div>
-        <div class="item five">5</div>
-        <div class="item six">6</div>
-        <div class="seven item"><div class="bar">seven</div></div>
-        <div class="eight item">eight</div>
-        <div class="nine item">Nine</div>
-    </div>
-    <div class="wrapper2">
-        <div class="box header">Header</div>
-        <div class="box sidebar">Sidebar</div>
-        <div class="box content">Content</div>
-    </div>
+    <!--<div class="wrapper">-->
+        <!--<div class="item one">1</div>-->
+        <!--<div class="item two">2</div>-->
+        <!--<div class="item three">3</div>-->
+        <!--<div class="item four">4</div>-->
+        <!--<div class="item five">5</div>-->
+        <!--<div class="item six">6</div>-->
+        <!--<div class="seven item"><div class="bar">seven</div></div>-->
+        <!--<div class="eight item">eight</div>-->
+        <!--<div class="nine item">Nine</div>-->
+    <!--</div>-->
+    <!--<div class="wrapper2">-->
+        <!--<div class="box header">Header</div>-->
+        <!--<div class="box sidebar">Sidebar</div>-->
+        <!--<div class="box content">Content</div>-->
+    <!--</div>-->
 </body>
+<script>
+    var num = 10;
+    const obj5 = {num: 20};
+    obj5.fn = (function (num) {  //20
+        debugger
+        this.num = num * 3; //60
+        num++;  // 21
+        console.log('a',this,' ',this.num,' ', num);
+        return function (n) {  //5  10
+            debugger
+            this.num += n;  //65  30
+            num++; //22
+            console.log('b',this,' ',this.num);
+            console.log(num)  //22
+        }
+    })(obj5.num);
+    var fn = obj5.fn;
+    fn(5);
+    obj5.fn(10);
+    console.log(num, obj5.num);
+</script>
 </html>
