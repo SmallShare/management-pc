@@ -5,7 +5,9 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import '@/assets/style/reset.scss'
+import myMinxin from './mixins'
 Vue.use(Vuex);
+Vue.mixin(myMinxin);
 Vue.config.productionTip = false;
 
 // 按需引入 ElementUI

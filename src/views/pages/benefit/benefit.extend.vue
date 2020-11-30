@@ -1,11 +1,10 @@
 <template>
     <div>
-        <p>新增</p>
-        <button @click="queryData"></button>
+        <p>全局挂载示例mixin</p>
     </div>
 </template>
 <script type="text/ecmascript-6">
-    import {getPolicys} from '../../../api/benefitApi'
+    // import myMinxin from '../../../mixins'
     export default {
         data() {
             return {};
@@ -13,6 +12,7 @@
         components: {},
         watch: {},
         created() {
+            this.mixinFn();
         },
         beforeRouteLeave(to, from, next) {
             next();
@@ -29,20 +29,11 @@
 
         },
         mounted() {
+
         },
+        // mixins: [myMinxin],
         filters: {},
         methods: {
-            queryData(){
-                let param = {
-                    "contNo":"886825243505",
-                    "name":"","idCardCode":"",
-                    "agentNo":"01200123"
-                };
-                getPolicys(param).then( result=>{
-
-                })
-
-            }
         },
         destroyed() {
         }

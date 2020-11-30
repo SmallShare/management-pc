@@ -6,11 +6,19 @@ const path = require('path')
 
 module.exports = {
   dev: {
-
+    // env: require('./dev.env'),
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+        '/ydbq': {
+            target:'http://osptest.newchinalife.com',
+            changeOrigin:true,
+            pathRewrite: {
+                '^/ydbq': '',//重写,
+            }
+        }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST
@@ -37,7 +45,9 @@ module.exports = {
   },
 
   build: {
-    // Template for index.html
+    testEnv: require('./test.env'),
+    prodEnv: require('./prod.env'),
+      // Template for index.html
     index: path.resolve(__dirname, '../dist/index.html'),
 
     // Paths
