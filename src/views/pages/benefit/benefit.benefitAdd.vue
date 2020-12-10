@@ -6,6 +6,7 @@
 </template>
 <script type="text/ecmascript-6">
     import {getPolicys} from '../../../api/benefitApi'
+    let chace = new Map();
     export default {
         data() {
             return {};
@@ -32,16 +33,21 @@
         },
         filters: {},
         methods: {
-            queryData(){
+            async queryData(){
+                let key = 'queryList';
                 let param = {
                     "contNo":"886825243505",
                     "name":"","idCardCode":"",
                     "agentNo":"01200123"
                 };
-                getPolicys(param).then( result=>{
+                let data = chace.get(key);
+                if(!data){
+                    let res = await getPolicys(param);
+                        data = res;
+                        chace.set(key,data);
 
-                })
-
+                }
+                console.log(data);
             }
         },
         destroyed() {

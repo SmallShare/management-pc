@@ -31,9 +31,8 @@ $http.interceptors.request.use(
 $http.interceptors.response.use(response =>{
     let data = response.data;
     if(data.resultCode !== '200'){
-    } else {
-        return data;
     }
+    return data;
 }, error => {
     if(error && error.response){
         switch (error.response.status) {

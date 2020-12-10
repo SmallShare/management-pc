@@ -1,35 +1,29 @@
 <template>
     <div class="side-menu">
         <el-menu
-                default-active="1"
+                :default-active="this.$route.path"
                 class="el-menu-vertical-demo"
                 @open="handleOpen"
                 @close="handleClose"
+                :router="true"
                 background-color="#000000"
                 text-color="#fff"
+                :unique-opened="true"
+                :default-openeds="openArr"
                 active-text-color="#ffd04b">
-            <el-submenu index="1">
+            <el-submenu v-for="(item,index) in homeList"
+                        :index="index + 'b'"
+                        :key="index+'a'">
                 <template slot="title">
                     <i class="el-icon-location"></i>
-                    <span>导航一</span>
+                    <span>{{item.title}}</span>
                 </template>
-                <el-menu-item-group>
-                    <el-menu-item index="1-1">选项1</el-menu-item>
-                    <el-menu-item index="1-2">选项2</el-menu-item>
-                </el-menu-item-group>
-                <el-submenu index="1-4">
-                    <template slot="title">选项4</template>
-                    <el-menu-item index="1-4-1">选项1</el-menu-item>
-                </el-submenu>
+                <el-menu-item v-for="(i,key) in item.groups"
+                              :route="{path:i.path}"
+                              :index="i.path"
+                              :key="key">{{i.info}}
+                </el-menu-item>
             </el-submenu>
-            <el-menu-item index="2">
-                <i class="el-icon-menu"></i>
-                <span slot="title">导航二</span>
-            </el-menu-item>
-            <el-menu-item index="3">
-                <i class="el-icon-setting"></i>
-                <span slot="title">导航三</span>
-            </el-menu-item>
         </el-menu>
     </div>
 </template>
@@ -37,13 +31,40 @@
     export default {
         name: 'subMenu',
         data() {
-            return {};
+            return {
+                // homeList: []
+            };
         },
         components: {},
         watch: {},
         created() {
+
+        },
+        computed: {
+            homeList(){
+                return this.$store.getters.homeList;
+            },
+            openArr(){
+                let arr = [];
+                this.homeList.forEach((item,index)=>{
+                    if(item.groups){
+                        item.groups.some(bar=>{
+                            if(bar.path === this.$route.path){
+                                arr.push(bar.path);
+                            }
+                        })
+                    }
+                })
+                return arr;
+            }
         },
         mounted() {
+            if(this.$store.getters.homeList.length === 0){
+                this.$store.dispatch('getHomeList',{
+                    'groupCode': '8621'
+                });
+            }
+            console.log(this.homeList);
         },
         filters: {},
         methods: {

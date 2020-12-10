@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import Vuex from 'vuex'
+import store from './store/index'
 import '@/assets/style/reset.scss'
 import myMinxin from './mixins'
 Vue.use(Vuex);
@@ -85,6 +86,7 @@ Vue.prototype.$message = Message;
 new Vue({
   el: '#app',
   router,
+  store,
   components: { App },
   template: '<App/>'
 })
