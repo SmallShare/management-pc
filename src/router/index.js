@@ -18,19 +18,12 @@ const Routes = [
             isUseCache: false,  // 这个字段的意思稍后再说
             keepAlive: false  // 通过此字段判断是否需要缓存当前组件
         },
-        component: () => import('@/views/index')
+        component: () => import('@/views/index'),
+        children: [
+            ...customer
+        ]
     }
-    // ,
-    // {
-    //     path: `/query`,
-    //     name: 'query',
-    //     meta:{
-    //         isUseCache: false,  // 这个字段的意思稍后再说
-    //         keepAlive: false  // 通过此字段判断是否需要缓存当前组件
-    //     },
-    //     component: () =>import(`@/views/pages/customer/customer.query`)
-    // }
-].concat(customer);
+];
 console.log(Routes);
 export default new Router({
   routes: Routes

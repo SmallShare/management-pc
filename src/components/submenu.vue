@@ -8,7 +8,6 @@
                 :router="true"
                 background-color="#000000"
                 text-color="#fff"
-                :unique-opened="true"
                 :default-openeds="openArr"
                 active-text-color="#ffd04b">
             <el-submenu v-for="(item,index) in homeList"

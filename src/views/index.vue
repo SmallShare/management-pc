@@ -1,18 +1,14 @@
 <template>
     <div class="pc-content">
-        <!--<header-bar v-if="headerShow"></header-bar>-->
+        <header-bar v-if="headerShow"></header-bar>
         <el-container>
             <el-aside width="290px" class="aside">
                 <sub-menu></sub-menu>
             </el-aside>
             <el-main>
-                <keep-alive>
-                    <router-view v-if="$route.meta.keepAlive"/>
-                </keep-alive>
-                <router-view v-if="!$route.meta.keepAlive"/>
+                <router-view/>
             </el-main>
         </el-container>
-        <button @click="goBenefit()">跳转到受益人</button>
     </div>
 </template>
 <script type="text/ecmascript-6">
