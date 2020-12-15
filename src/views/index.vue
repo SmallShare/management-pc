@@ -1,6 +1,6 @@
 <template>
     <div class="pc-content">
-        <header-bar v-if="headerShow"></header-bar>
+        <!--<header-bar v-if="headerShow"></header-bar>-->
         <el-container>
             <el-aside width="290px" class="aside">
                 <sub-menu></sub-menu>

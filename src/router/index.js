@@ -1,7 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import customer from '@/router/module/customer.router'
-import index from '@/views/index'
 
 Vue.use(Router);
 const Routes = [

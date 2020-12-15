@@ -53,7 +53,7 @@ module.exports = {
     // Paths
     assetsRoot: path.resolve(__dirname, '../dist'),
     assetsSubDirectory: 'static',
-    assetsPublicPath: '/',
+    assetsPublicPath: './',     // 打包默认是绝对目录，现在改下，可以查看本地打包的index页面
 
     /**
      * Source Maps
