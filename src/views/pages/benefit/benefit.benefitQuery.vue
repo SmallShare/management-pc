@@ -2,6 +2,7 @@
     <!--上传文件示例-->
     <div>
         <button @change="btnClick()">点击</button>
+        <button @click="getList">查询</button>
         <div>
             <input type="file" ref="files" @change="getFile">
             <img :src="imgSrc" alt="">
@@ -32,6 +33,7 @@
 </template>
 <script type="text/ecmascript-6">
     import icons21 from '@/assets/images/icons21.png';
+    import {getPolicys} from '@/api/benefitApi';
     export default {
         data() {
             return {
@@ -62,10 +64,22 @@
 
         },
         mounted() {
-
+            this.getList();
         },
         filters: {},
         methods: {
+            getList(){
+                let obj = {
+                    contNo: '423534645675', //保单号
+                    name: '方法', //姓名
+                    idCardCode: '253465', //证件号
+                    agentNo: '01200123', //业务员号 、  必填
+                    agentName: '刚刚' //业务员姓名
+                };
+                getPolicys(obj).then(result => {
+                    console.log('result',result);
+                })
+            },
             getBase64Image(img) {
                 let canvas = document.createElement("canvas");
                 canvas.width = img.width;

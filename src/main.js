@@ -5,6 +5,7 @@ import App from './App'
 import router from './router'
 import Vuex from 'vuex'
 import store from './store/index'
+import './mock/index'
 import '@/assets/style/reset.scss'
 import myMinxin from './mixins'
 Vue.use(Vuex);

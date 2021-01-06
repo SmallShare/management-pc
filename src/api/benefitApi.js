@@ -11,3 +11,6 @@ export function queryBqInfos(paramObj){
 export  function getPolicys(params){
     return fetch('/beneficiary/beneficiaryChange/getPolicys', params)
 }
+export function searchList(params) {
+    return post('/beneficiary/beneficiaryChange/searchList', params)
+}
